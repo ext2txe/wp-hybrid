@@ -1,0 +1,273 @@
+:root {
+	--hs-ink: #172026;
+	--hs-paper: #fbfaf7;
+	--hs-muted: #5e686d;
+	--hs-border: #d8ddd8;
+	--hs-moss: #496f5d;
+	--hs-clay: #b05f4a;
+	--hs-sky: #5b8fb9;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--hs-paper);
+	color: var(--hs-ink);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font-size: 18px;
+	line-height: 1.65;
+	letter-spacing: 0;
+}
+
+a {
+	color: var(--hs-moss);
+	text-decoration-thickness: 0.08em;
+	text-underline-offset: 0.18em;
+}
+
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+.screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.skip-link:focus {
+	position: fixed;
+	top: 1rem;
+	left: 1rem;
+	z-index: 1000;
+	width: auto;
+	height: auto;
+	padding: 0.75rem 1rem;
+	background: var(--hs-ink);
+	color: #fff;
+	clip: auto;
+}
+
+.site-header,
+.site-footer {
+	border-color: var(--hs-border);
+	border-style: solid;
+}
+
+.site-header {
+	border-width: 0 0 1px;
+}
+
+.site-footer {
+	border-width: 1px 0 0;
+}
+
+.site-header__inner,
+.site-footer__inner,
+.content-section__inner {
+	width: min(1120px, calc(100% - 2rem));
+	margin-inline: auto;
+}
+
+.site-header__inner,
+.site-footer__inner {
+	display: flex;
+	gap: 1rem 2rem;
+	align-items: center;
+	justify-content: space-between;
+	padding-block: 1.25rem;
+}
+
+.site-branding {
+	display: grid;
+	gap: 0.15rem;
+}
+
+.site-title {
+	color: var(--hs-ink);
+	font-size: 1.2rem;
+	font-weight: 750;
+	line-height: 1.2;
+	text-decoration: none;
+}
+
+.site-description,
+.entry-meta {
+	margin: 0;
+	color: var(--hs-muted);
+	font-size: 0.92rem;
+}
+
+.site-navigation__menu,
+.site-footer__menu {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.site-navigation a,
+.site-footer a {
+	color: var(--hs-ink);
+	text-decoration: none;
+}
+
+.site-navigation a:hover,
+.site-footer a:hover {
+	color: var(--hs-clay);
+}
+
+.content-section {
+	padding-block: 4rem;
+}
+
+.content-section__inner {
+	width: min(860px, calc(100% - 2rem));
+}
+
+.post-list {
+	display: grid;
+	gap: 2rem;
+}
+
+.entry {
+	display: grid;
+	gap: 1.25rem;
+}
+
+.entry--summary {
+	padding-bottom: 2rem;
+	border-bottom: 1px solid var(--hs-border);
+}
+
+.entry-header {
+	display: grid;
+	gap: 0.35rem;
+}
+
+.entry-title {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 2.4rem;
+	line-height: 1.08;
+}
+
+.entry-title a {
+	color: var(--hs-ink);
+	text-decoration: none;
+}
+
+.entry-title a:hover {
+	color: var(--hs-clay);
+}
+
+.entry-content > *:first-child,
+.entry-summary > *:first-child {
+	margin-top: 0;
+}
+
+.entry-content > *:last-child,
+.entry-summary > *:last-child {
+	margin-bottom: 0;
+}
+
+.entry-image img {
+	width: 100%;
+	border-radius: 8px;
+}
+
+.archive-header {
+	margin-bottom: 2.5rem;
+}
+
+.page-title {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 2.8rem;
+	line-height: 1.05;
+}
+
+.nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 2rem;
+}
+
+.page-numbers,
+.post-page-numbers {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.25rem;
+	padding: 0.25rem 0.65rem;
+	border: 1px solid var(--hs-border);
+	border-radius: 6px;
+	text-decoration: none;
+}
+
+.page-numbers.current {
+	background: var(--hs-ink);
+	color: #fff;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+input[type="search"],
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
+	width: 100%;
+	padding: 0.65rem 0.8rem;
+	border: 1px solid var(--hs-border);
+	border-radius: 6px;
+	background: #fff;
+	color: var(--hs-ink);
+}
+
+button,
+input[type="submit"] {
+	padding: 0.65rem 0.9rem;
+	border: 0;
+	border-radius: 6px;
+	background: var(--hs-ink);
+	color: #fff;
+	cursor: pointer;
+}
+
+@media (max-width: 720px) {
+	.site-header__inner,
+	.site-footer__inner {
+		display: grid;
+		align-items: start;
+	}
+
+	.content-section {
+		padding-block: 2.5rem;
+	}
+
+	.entry-title,
+	.page-title {
+		font-size: 2rem;
+	}
+}
+
