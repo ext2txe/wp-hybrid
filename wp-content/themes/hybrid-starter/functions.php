@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'HYBRID_STARTER_VERSION', '0.1.5' );
+define( 'HYBRID_STARTER_VERSION', '0.1.7' );
 
 /**
  * Register theme features.
@@ -31,6 +31,9 @@ function hybrid_starter_setup(): void {
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'assets/css/editor.css' );
+	add_action( 'after_setup_theme', function() {
+		add_theme_support( 'align-wide' );
+	} );
 
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'hybrid-starter' ),
@@ -80,7 +83,7 @@ function hybrid_starter_sanitize_admin_link_url( string $url ): string {
 /**
  * Render an admin-only link.
  *
- * Usage: [ADMIN-LINK url="/wp-admin" text="Open admin link"]
+ * Usage: [admin-link url="/wp-admin/" label="Admin Dashboard" class="admin-only-link"]
  */
 function hybrid_starter_admin_link_shortcode( array $atts ): string {
 	if ( ! current_user_can( 'manage_options' ) ) {
@@ -89,8 +92,9 @@ function hybrid_starter_admin_link_shortcode( array $atts ): string {
 
 	$atts = shortcode_atts(
 		array(
-			'url'  => '',
-			'text' => __( 'Admin link', 'hybrid-starter' ),
+			'url'   => '/wp-admin/',
+			'label' => __( 'Admin Dashboard', 'hybrid-starter' ),
+			'class' => 'admin-only-link',
 		),
 		$atts,
 		'ADMIN-LINK'
@@ -103,9 +107,10 @@ function hybrid_starter_admin_link_shortcode( array $atts ): string {
 	}
 
 	return sprintf(
-		'<a class="admin-link" href="%1$s">%2$s</a>',
+		'<a class="%3$s" href="%1$s">%2$s</a>',
 		$url,
-		esc_html( $atts['text'] )
+		esc_html( $atts['label'] ),
+		esc_attr( $atts['class'] )
 	);
 }
 add_shortcode( 'ADMIN-LINK', 'hybrid_starter_admin_link_shortcode' );
