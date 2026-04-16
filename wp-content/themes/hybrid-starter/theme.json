@@ -1,0 +1,91 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultDuotone": false,
+			"defaultPalette": false,
+			"palette": [
+				{
+					"slug": "ink",
+					"name": "Ink",
+					"color": "#172026"
+				},
+				{
+					"slug": "paper",
+					"name": "Paper",
+					"color": "#fbfaf7"
+				},
+				{
+					"slug": "moss",
+					"name": "Moss",
+					"color": "#496f5d"
+				},
+				{
+					"slug": "clay",
+					"name": "Clay",
+					"color": "#b05f4a"
+				},
+				{
+					"slug": "sky",
+					"name": "Sky",
+					"color": "#5b8fb9"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "800px",
+			"wideSize": "1200px"
+		},
+		"spacing": {
+			"units": [ "px", "rem", "%", "vw", "vh" ]
+		},
+		"typography": {
+			"fluid": false,
+			"fontFamilies": [
+				{
+					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+					"name": "System Sans",
+					"slug": "system-sans"
+				},
+				{
+					"fontFamily": "Georgia, 'Times New Roman', serif",
+					"name": "Serif",
+					"slug": "serif"
+				}
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "#fbfaf7",
+			"text": "#172026"
+		},
+		"elements": {
+			"button": {
+				"border": {
+					"radius": "6px"
+				},
+				"color": {
+					"background": "#172026",
+					"text": "#ffffff"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "#496f5d"
+				}
+			}
+		},
+		"spacing": {
+			"blockGap": "1.5rem"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-sans)",
+			"fontSize": "18px",
+			"lineHeight": "1.65"
+		}
+	}
+}
+

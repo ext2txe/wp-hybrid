@@ -1,0 +1,33 @@
+/*
+Theme Name: Hybrid Starter
+Theme URI: https://example.com/hybrid-starter
+Author: Joe
+Author URI: https://example.com
+Description: A compact hybrid theme starter with classic PHP templates and modern block editor support.
+Version: 0.1.6
+Requires at least: 6.6
+Tested up to: 7.0
+Requires PHP: 8.2
+Text Domain: hybrid-starter
+*/
+.alignwide {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignfull {
+	width: 100vw;
+	max-width: 100vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
+.wp-block-image {
+	background-color: blue;
+	padding: 10px;
+}
+
+.wp-block-image img {
+	background-color: blue;
+}
